@@ -56,9 +56,22 @@
 
         nav a:hover { color: #b45960; }
 
-        /* BANNER PRINCIPAL */
+        /* SEÇÃO DE VÍDEO EM DESTAQUE (AUTOPLAY) */
+        .featured-video-section {
+            width: 100%;
+            background: #000;
+            line-height: 0; /* Remove espaços brancos abaixo do vídeo */
+        }
+
+        .featured-video-section video {
+            width: 100%;
+            max-height: 80vh; /* Ocupa 80% da altura da tela */
+            object-fit: cover;
+        }
+
+        /* BANNER ANTIGO (MANTIDO) */
         .banner {
-            height: 450px;
+            height: 300px;
             background: url('imagem/Image_central.jpeg') center/cover no-repeat;
             position: relative;
             display: flex;
@@ -81,12 +94,10 @@
             text-align: center;
             max-width: 900px;
             font-family: 'Oswald', sans-serif;
-            font-size: 45px;
+            font-size: 35px;
             font-weight: 700;
             text-transform: uppercase;
-            line-height: 1.1;
             text-shadow: 3px 3px 10px rgba(0,0,0,0.7);
-            padding: 0 20px;
         }
 
         /* SEÇÕES */
@@ -108,7 +119,7 @@
             margin-bottom: 30px;
         }
 
-        /* GRID DE SERVIÇOS (BEFORE & AFTER) */
+        /* GRID DE SERVIÇOS */
         .services {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -143,7 +154,7 @@
             margin: 10px 0;
         }
 
-        /* NOVA GALERIA DE FOTOS (PORTFOLIO) */
+        /* GALERIA DE FOTOS */
         .photo-gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -161,35 +172,20 @@
         }
 
         .photo-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease, filter 0.5s ease;
+            width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;
         }
 
-        .photo-item:hover img {
-            transform: scale(1.15);
-            filter: brightness(1.1);
+        .photo-item:hover img { transform: scale(1.15); }
+
+        /* VÍDEOS ADICIONAIS */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
         }
+        .video-grid video { width: 100%; border-radius: 4px; background: #000; }
 
-        .photo-item::before {
-            content: "View Project";
-            position: absolute;
-            top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
-            font-weight: bold;
-            z-index: 2;
-            opacity: 0;
-            transition: 0.3s;
-            text-transform: uppercase;
-            font-size: 12px;
-            pointer-events: none;
-        }
-
-        .photo-item:hover::before { opacity: 1; }
-
-        /* FEEDBACK SECTION */
+        /* FEEDBACK */
         .feedback-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -204,49 +200,25 @@
             border: 1px solid #eee;
         }
 
-        .feedback-card img {
-            width: 100%;
-            border-radius: 4px;
-            cursor: pointer;
-        }
+        .feedback-card img { width: 100%; border-radius: 4px; cursor: pointer; }
 
-        /* FOOTER */
+        /* FOOTER & WHATSAPP */
         footer {
-            background: #111;
-            color: #fff;
-            text-align: center;
-            padding: 40px;
-            margin-top: auto;
-            text-transform: uppercase;
-            font-size: 13px;
+            background: #111; color: #fff; text-align: center;
+            padding: 40px; margin-top: auto; text-transform: uppercase; font-size: 13px;
         }
 
-        /* WHATSAPP */
         .whatsapp-button {
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-            background: #25D366;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-            z-index: 1000;
+            position: fixed; bottom: 25px; right: 25px;
+            background: #25D366; width: 60px; height: 60px;
+            border-radius: 50%; display: flex; align-items: center;
+            justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.3); z-index: 1000;
         }
         .whatsapp-button img { width: 35px; }
 
-        /* MODAL */
         #modal {
-            display: none;
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.9);
-            justify-content: center;
-            align-items: center;
-            z-index: 10000;
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.9); justify-content: center; align-items: center; z-index: 10000;
         }
         #modal img { max-width: 90%; max-height: 85%; border: 3px solid white; }
     </style>
@@ -264,13 +236,20 @@
             <a href="#about">About</a>
             <a href="#services">Services</a>
             <a href="#gallery">Gallery</a>
-            <a href="#feedback">Feedback</a>
+            <a href="#videos">Videos</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
 
+    <div class="featured-video-section">
+        <video autoplay muted loop playsinline>
+            <source src="videos/video1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
     <div class="banner">
-        <div class="banner-text">Quality Construction & <br>Renovation Services You Can Trust</div>
+        <div class="banner-text">Quality Construction & Renovation Services You Can Trust</div>
     </div>
 
     <section id="about">
@@ -328,13 +307,20 @@
                 <h3>Exterior House Painting - Rhode Island - RI</h3>
                 <p>Professional exterior painting and siding restoration that stands up to the elements.</p>
             </div>
+
+            <div class="card">
+                <div class="image-row">
+                    <img src="imagem/projcAntes (2).jpeg" onclick="abrirImagem(this)" alt="Rhode Island Before">
+                    <img src="imagem/projcDepois (1).jpeg" onclick="abrirImagem(this)" alt="Rhode Island After">
+                </div>
+                <h3>Pembroke - MA</h3>
+                <p>Quality that stands out. This before-and-after of the facade reflects our commitment to excellence in every detail. We use premium materials and specialized techniques to ensure an impeccable, long-lasting result.</p>
+            </div>
         </div>
     </section>
 
     <section id="gallery">
         <h2>Project Portfolio</h2>
-        <p>Take a look at some of our recent professional finishes.</p>
-        
         <div class="photo-gallery">
             <div class="photo-item" onclick="abrirImagem(this.querySelector('img'))">
                 <img src="imagem/project1.jpeg" alt="Portfolio 1">
@@ -343,11 +329,19 @@
                 <img src="imagem/project2.png" alt="Portfolio 2">
             </div>
             <div class="photo-item" onclick="abrirImagem(this.querySelector('img'))">
-                <img src="imagem/foto3.jpeg" alt="Portfolio 3">
+                <img src="imagem/project3 (1).jpeg" alt="Portfolio 3">
             </div>
             <div class="photo-item" onclick="abrirImagem(this.querySelector('img'))">
-                <img src="imagem/foto4.jpeg" alt="Portfolio 4">
+                <img src="imagem/project4.jpeg" alt="Portfolio 4">
             </div>
+        </div>
+    </section>
+
+    <section id="videos">
+        <h2>More Videos</h2>
+        <div class="video-grid">
+            <video controls><source src="videos/video2.mp4" type="video/mp4"></video>
+            <video controls><source src="videos/video3.mp4" type="video/mp4"></video>
         </div>
     </section>
 
