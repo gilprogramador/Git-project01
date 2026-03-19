@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ART Construction Services, Corp</title>
+    <title>ART Construction Services LLC | Professional Renovation in New England</title>
 
+    <meta name="description" content="ART Construction Services LLC provides high-quality home renovation, interior painting, and deck restoration in NH, MA, and RI.">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
 
     <style>
@@ -56,20 +57,19 @@
 
         nav a:hover { color: #b45960; }
 
-        /* SEÇÃO DE VÍDEO EM DESTAQUE (AUTOPLAY) */
+        /* SEÇÃO DE VÍDEO EM DESTAQUE */
         .featured-video-section {
             width: 100%;
             background: #000;
-            line-height: 0; /* Remove espaços brancos abaixo do vídeo */
+            line-height: 0;
         }
 
         .featured-video-section video {
             width: 100%;
-            max-height: 80vh; /* Ocupa 80% da altura da tela */
+            max-height: 80vh;
             object-fit: cover;
         }
 
-        /* BANNER ANTIGO (MANTIDO) */
         .banner {
             height: 300px;
             background: url('imagem/Image_central.jpeg') center/cover no-repeat;
@@ -98,9 +98,9 @@
             font-weight: 700;
             text-transform: uppercase;
             text-shadow: 3px 3px 10px rgba(0,0,0,0.7);
+            padding: 0 20px;
         }
 
-        /* SEÇÕES */
         section {
             max-width: 1100px;
             background: rgba(255, 255, 255, 0.97);
@@ -119,14 +119,11 @@
             margin-bottom: 30px;
         }
 
-        /* GRID DE SERVIÇOS */
         .services {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
         }
-
-        .card { margin-bottom: 20px; }
 
         .image-row {
             display: flex;
@@ -154,7 +151,6 @@
             margin: 10px 0;
         }
 
-        /* GALERIA DE FOTOS */
         .photo-gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -177,7 +173,6 @@
 
         .photo-item:hover img { transform: scale(1.15); }
 
-        /* VÍDEOS ADICIONAIS */
         .video-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -185,7 +180,6 @@
         }
         .video-grid video { width: 100%; border-radius: 4px; background: #000; }
 
-        /* FEEDBACK */
         .feedback-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -202,12 +196,12 @@
 
         .feedback-card img { width: 100%; border-radius: 4px; cursor: pointer; }
 
-        /* FOOTER & WHATSAPP */
         footer {
             background: #111; color: #fff; text-align: center;
             padding: 40px; margin-top: auto; text-transform: uppercase; font-size: 13px;
         }
 
+        /* Botões de Ação Rápida */
         .whatsapp-button {
             position: fixed; bottom: 25px; right: 25px;
             background: #25D366; width: 60px; height: 60px;
@@ -221,28 +215,36 @@
             background: rgba(0,0,0,0.9); justify-content: center; align-items: center; z-index: 10000;
         }
         #modal img { max-width: 90%; max-height: 85%; border: 3px solid white; }
+
+        /* Responsividade para Mobile */
+        @media (max-width: 768px) {
+            header { padding: 15px 20px; flex-direction: column; }
+            nav { margin-top: 15px; }
+            nav a { margin: 0 10px; font-size: 11px; }
+            section { padding: 25px; margin: 20px; }
+        }
     </style>
 </head>
 
 <body>
 
     <div id="modal" onclick="fecharImagem()">
-        <img id="imgAmpliada" src="" alt="Ampliada">
+        <img id="imgAmpliada" src="" alt="Enlarged view">
     </div>
 
     <header>
-        <img src="imagem/logo (2).png" alt="Logo">
+        <img src="imagem/logo (2).png" alt="ART Construction Services Logo">
         <nav>
             <a href="#about">About</a>
             <a href="#services">Services</a>
-            <a href="#gallery">Gallery</a>
+            <a href="#gallery">Portfolio</a>
             <a href="#videos">Videos</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
 
     <div class="featured-video-section">
-        <video autoplay muted loop playsinline>
+        <video autoplay muted loop playsinline poster="imagem/Image_central.jpeg">
             <source src="videos/video1.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
@@ -255,8 +257,8 @@
     <section id="about">
         <h2>About Us</h2>
         <p style="font-size: 18px; line-height: 1.6;">
-            <strong>ART Construction Services, Corp</strong> is a trusted U.S. construction company delivering high-quality renovation and repair solutions. 
-            We focus on durability, aesthetics, and professional craftsmanship.
+            <strong>ART Construction Services LLC</strong> is a trusted U.S. based construction company delivering high-quality renovation and repair solutions across New England. 
+            We focus on durability, aesthetics, and professional craftsmanship in every project.
         </p>
     </section>
 
@@ -265,56 +267,56 @@
         <div class="services">
             <div class="card">
                 <div class="image-row">
-                    <img src="imagem/InterioraPainting1.jpeg" onclick="abrirImagem(this)" alt="Interior Before">
-                    <img src="imagem/InterioraPainting2.jpeg" onclick="abrirImagem(this)" alt="Interior After">
+                    <img src="imagem/InterioraPainting1.jpeg" onclick="abrirImagem(this)" alt="Interior painting preparation in Grantham, NH">
+                    <img src="imagem/InterioraPainting2.jpeg" onclick="abrirImagem(this)" alt="Interior painting finished result in Grantham, NH">
                 </div>
-                <h3>Interior Residential Painting – Gramtham - NH</h3>
-                <p>We transformed this interior space with full preparation, repairs, and premium paint application.</p>
+                <h3>Interior Residential Painting – Grantham, NH</h3>
+                <p>We transformed this interior space with full preparation, minor repairs, and premium paint application.</p>
             </div>
 
             <div class="card">
                 <div class="image-row">
-                    <img src="imagem/DeckAntes.jpeg" onclick="abrirImagem(this)" alt="Deck Before">
-                    <img src="imagem/DeckDepois.jpeg" onclick="abrirImagem(this)" alt="Deck After">
+                    <img src="imagem/DeckAntes.jpeg" onclick="abrirImagem(this)" alt="Deck restoration before cleaning">
+                    <img src="imagem/DeckDepois.jpeg" onclick="abrirImagem(this)" alt="Deck restoration after premium staining">
                 </div>
-                <h3>Deck Restoration – NASHUA - NH</h3>
-                <p>Complete deck restoration with deep cleaning, sanding, and premium stain application.</p>
+                <h3>Deck Restoration – Nashua, NH</h3>
+                <p>Complete deck restoration with deep pressure washing, sanding, and premium stain application for weather protection.</p>
             </div>
 
             <div class="card">
                 <div class="image-row">
-                    <img src="imagem/Boston _MA.jpeg" onclick="abrirImagem(this)" alt="Boston Project">
-                    <img src="imagem/Boston _ MA2.jpeg" onclick="abrirImagem(this)" alt="Boston Project 2">
+                    <img src="imagem/Boston _MA.jpeg" onclick="abrirImagem(this)" alt="Exterior painting project in Boston, MA">
+                    <img src="imagem/Boston _ MA2.jpeg" onclick="abrirImagem(this)" alt="Exterior painting project finished in Boston, MA">
                 </div>
-                <h3>BOSTON - MA</h3>
-                <p>Complete exterior transformation with surface cleaning and premium paint application.</p>
+                <h3>Exterior Painting – Boston, MA</h3>
+                <p>Complete exterior transformation with professional surface cleaning and high-durability paint application.</p>
             </div>
 
             <div class="card">
                 <div class="image-row">
-                    <img src="imagem/portão1.jpeg" onclick="abrirImagem(this)" alt="Door Before">
-                    <img src="imagem/portão2.jpeg" onclick="abrirImagem(this)" alt="Door After">
+                    <img src="imagem/portão1.jpeg" onclick="abrirImagem(this)" alt="Basement door before restoration">
+                    <img src="imagem/portão2.jpeg" onclick="abrirImagem(this)" alt="Basement door after rust treatment">
                 </div>
-                <h3>Basement Door Restoration & Painting - Nashua NH</h3>
-                <p>We provide specialized rust treatment and high-resistance coatings for long-lasting protection.</p>
+                <h3>Basement Door Restoration – Nashua, NH</h3>
+                <p>Specialized rust treatment and high-resistance coatings for long-lasting protection against the elements.</p>
             </div>
 
             <div class="card">
                 <div class="image-row">
-                    <img src="imagem/RhodeIsland _RI1.jpeg" onclick="abrirImagem(this)" alt="Rhode Island Before">
-                    <img src="imagem/RhodeIsland _RI2.jpg" onclick="abrirImagem(this)" alt="Rhode Island After">
+                    <img src="imagem/RhodeIsland _RI1.jpeg" onclick="abrirImagem(this)" alt="House siding before painting">
+                    <img src="imagem/RhodeIsland _RI2.jpg" onclick="abrirImagem(this)" alt="House siding after premium painting">
                 </div>
-                <h3>Exterior House Painting - Rhode Island - RI</h3>
-                <p>Professional exterior painting and siding restoration that stands up to the elements.</p>
+                <h3>Exterior House Painting – RI</h3>
+                <p>Professional exterior painting and siding restoration designed to withstand harsh weather conditions.</p>
             </div>
 
             <div class="card">
                 <div class="image-row">
-                    <img src="imagem/projcAntes (2).jpeg" onclick="abrirImagem(this)" alt="Rhode Island Before">
-                    <img src="imagem/projcDepois (1).jpeg" onclick="abrirImagem(this)" alt="Rhode Island After">
+                    <img src="imagem/projcAntes (2).jpeg" onclick="abrirImagem(this)" alt="House facade before renovation">
+                    <img src="imagem/projcDepois (1).jpeg" onclick="abrirImagem(this)" alt="House facade after renovation">
                 </div>
-                <h3>Pembroke - MA</h3>
-                <p>Quality that stands out. This before-and-after of the facade reflects our commitment to excellence in every detail. We use premium materials and specialized techniques to ensure an impeccable, long-lasting result.</p>
+                <h3>Full Renovation – Pembroke, MA</h3>
+                <p>Quality that stands out. This façade transformation reflects our commitment to excellence using premium materials.</p>
             </div>
         </div>
     </section>
@@ -323,56 +325,57 @@
         <h2>Project Portfolio</h2>
         <div class="photo-gallery">
             <div class="photo-item" onclick="abrirImagem(this.querySelector('img'))">
-                <img src="imagem/project1.jpeg" alt="Portfolio 1">
+                <img src="imagem/project1.jpeg" alt="Recent renovation project gallery">
             </div>
             <div class="photo-item" onclick="abrirImagem(this.querySelector('img'))">
-                <img src="imagem/project2.png" alt="Portfolio 2">
+                <img src="imagem/project2.png" alt="Interior remodeling showcase">
             </div>
             <div class="photo-item" onclick="abrirImagem(this.querySelector('img'))">
-                <img src="imagem/project3 (1).jpeg" alt="Portfolio 3">
+                <img src="imagem/project3 (1).jpeg" alt="Quality painting details">
             </div>
             <div class="photo-item" onclick="abrirImagem(this.querySelector('img'))">
-                <img src="imagem/project4.jpeg" alt="Portfolio 4">
+                <img src="imagem/project4.jpeg" alt="Home exterior improvement">
             </div>
         </div>
     </section>
 
     <section id="videos">
-        <h2>More Videos</h2>
+        <h2>Watch Our Process</h2>
         <div class="video-grid">
-            <video controls><source src="videos/video2.mp4" type="video/mp4"></video>
-            <video controls><source src="videos/video3.mp4" type="video/mp4"></video>
+            <video controls preload="metadata"><source src="videos/video2.mp4" type="video/mp4"></video>
+            <video controls preload="metadata"><source src="videos/video3.mp4" type="video/mp4"></video>
         </div>
     </section>
 
     <section id="feedback">
-        <h2>Customer Feedback</h2>
+        <h2>Client Feedback</h2>
         <div class="feedback-grid">
             <div class="feedback-card">
-                <img src="imagem/feedback1.jpeg" onclick="abrirImagem(this)" alt="Feedback 1">
-                <p><strong>Satisfied Client</strong></p>
+                <img src="imagem/feedback1.jpeg" onclick="abrirImagem(this)" alt="Client recommendation 1">
+                <p><strong>Verified Client</strong></p>
             </div>
             <div class="feedback-card">
-                <img src="imagem/feedback2.jpeg" onclick="abrirImagem(this)" alt="Feedback 2">
-                <p><strong>Satisfied Client</strong></p>
+                <img src="imagem/feedback2.jpeg" onclick="abrirImagem(this)" alt="Client recommendation 2">
+                <p><strong>Verified Client</strong></p>
             </div>
             <div class="feedback-card">
-                <img src="imagem/feedback3.jpeg" onclick="abrirImagem(this)" alt="Feedback 3">
-                <p><strong>Satisfied Client</strong></p>
+                <img src="imagem/feedback3.jpeg" onclick="abrirImagem(this)" alt="Client recommendation 3">
+                <p><strong>Verified Client</strong></p>
             </div>
         </div>
     </section>
 
     <section id="contact">
         <h2>Contact Us</h2>
+        <p>Looking for a free estimate? Reach out to us today!</p>
         <p><strong>Email:</strong> artconstructionllc@icloud.com <br> vbtrolese@icloud.com</p>
-        <p><strong>Phone:</strong> +1 (978) 596-6085</p>
+        <p><strong>Phone:</strong> <a href="tel:+19785966085" style="color: inherit; text-decoration: none;">+1 (978) 596-6085</a></p>
     </section>
 
-    <footer>© 2026 ART Construction Services, Corp | All Rights Reserved</footer>
+    <footer>© 2026 ART Construction Services LLC | All Rights Reserved</footer>
 
-    <a href="https://wa.me/19785966085" class="whatsapp-button" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    <a href="https://wa.me/+19785966085" class="whatsapp-button" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Contact">
     </a>
 
     <script>
